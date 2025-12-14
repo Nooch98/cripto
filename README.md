@@ -25,6 +25,11 @@ If you have the source code with the `setup.py` file:
 pip install .
 ```
 
+If you use Pypi:
+```bash
+pip install cripto-learn
+```
+
 # 🛠️ Usage
 
 ## 1. Generating Key Material
