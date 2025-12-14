@@ -92,7 +92,7 @@ This is ideal for securing sensitive data columns (like passwords, tokens, or pe
 | **Round Function (F)** | Simplified implementation | Includes bitwise XOR and byte rotation. |
 
 ## ⚠️ Disclaimer
-This library is intended for **educational purposes and personal projects*. While the implementation follows standard cryptographic principles (Feistel, CBC), it has not been rigorously audited by security professionals and should **NOT** be used to protect high-value, sensitive, or regulated data in production environments. Always rely on established libraries like PyCryptodome for professional applications.
+This library is intended for **educational purposes and personal projects**. While the implementation follows standard cryptographic principles (Feistel, CBC), it has not been rigorously audited by security professionals and should **NOT** be used to protect high-value, sensitive, or regulated data in production environments. Always rely on established libraries like PyCryptodome for professional applications.
 
 ## 🤝 Contributing
 Feedback and suggestions for improving the code or the simplified F-function are welcome!
