@@ -38,38 +38,38 @@ Before encryption, you must securely generate a master key file (`clave_secreta.
 You can use the built-in generation function:
 
 ```python
-import mi_cripto_personal
+import cripto
 import os
 
 KEY_FILE = "master_key.txt"
 
 # Generates the KEY (256-bit) and IV (64-bit) and saves them.
 if not os.path.exists(KEY_FILE):
-    mi_cripto_personal.generar_componentes_criptograficos(KEY_FILE)
+    cripto.generar_componentes_criptograficos(KEY_FILE)
     print(f"Key material saved to {KEY_FILE}")
 
 # Load the generated material for use in the application
-KEY, IV = mi_cripto_personal.cargar_componentes_clave(KEY_FILE)
+KEY, IV = cripto.cargar_componentes_clave(KEY_FILE)
 ```
 
 ## 2. Encryption and Decryption (Core Functions)
 The primary functions operate on `bytes` objects.
 ```python
-import mi_cripto_personal
+import cripto
 
 # Assume KEY and IV are loaded as bytes objects
 plaintext = "The data to be hidden.".encode('utf-8')
 
 # --- ENCRYPTION ---
 try:
-    ciphertext = mi_cripto_personal.cifrar_cbc(plaintext, KEY, IV)
+    ciphertext = cripto.cifrar_cbc(plaintext, KEY, IV)
     print(f"Ciphertext (Hex): {ciphertext.hex()}")
 except ValueError as e:
     print(f"Encryption Failed: {e}")
 
 # --- DECRYPTION ---
 try:
-    decrypted_bytes = mi_cripto_personal.descifrar_cbc(ciphertext, KEY, IV)
+    decrypted_bytes = cripto.descifrar_cbc(ciphertext, KEY, IV)
     decrypted_text = decrypted_bytes.decode('utf-8')
     
     print(f"Decrypted: {decrypted_text}")
